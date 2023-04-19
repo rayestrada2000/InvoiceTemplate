@@ -21,7 +21,8 @@
 
   <body>
     <div class="container rounded p-2 border border-1">
-      <div class="d-flex justify-content-end mt-3">
+      <div class="d-flex justify-content-end mt-3 d-print-none">
+        <!-- "d-print-none" so the button does not show up in Print Preview -->
         <button type="button" class="btn btn-dark" onclick="window.print()">Print this page</button>
       </div>
       <div class="row align-items-center">
@@ -48,7 +49,7 @@
         <div class="col-6 d-flex justify-content-start">
           <div>
             <strong>Invoice To:</strong><br>
-            <address>
+            <address class="address">
               Mark Davis <br>
               3333 Al Davis Way <br>
               Las Vegas, NV 80118
@@ -58,7 +59,7 @@
         <div class="col-6 d-flex justify-content-end">
           <div>
             <strong>Pay To:</strong><br>
-            <address>
+            <address class="address">
               Idea Foundry, Inc. <br>
               2715 N. Enterprise St<br>
               Kenersville, NC 27284
@@ -75,7 +76,8 @@
               <th>Description</th>
               <th>Rate</th>
               <th>Qty</th>
-              <th class="(justifyy-content-end: does not work) text-end">Amount</th>
+              <th class="d-flex justify-content-end ">Amount</th>
+              <!-- display: flex (d-flex), but without d-flex, can use "text-end" instead. -->
             </tr>
           </thead>
           <tbody>
@@ -117,6 +119,15 @@
           </tfoot>
         </table>
       </div>
+      <footer>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              <strong>Note:</strong>&nbsp;This is a computer generated receipt and does not require a signature.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- Bootstrap JS -->
